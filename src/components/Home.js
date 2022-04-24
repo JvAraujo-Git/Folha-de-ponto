@@ -1,42 +1,59 @@
 import React from 'react';
-import './Home.css';
+import NavBar from './NavBar';
+import EmptyList from './EmptyList';
+import Clocks from './Clocks';
+import ClockDialog from './ClockDialog';
+import Search from './Search';
 
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import LogoutIcon from '@mui/icons-material/Logout';
+import Fab from '@mui/material/Fab';
+import AddIcon from '@mui/icons-material/Add';
+import Container from '@mui/material/Container';
 
 const Home = (props) => {
-    return (
-        <div style={{ width: '100%', height: '100%', }}>
-            <AppBar position="static">
-                <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Typography variant="h6" component="div">
-                        Batidas de Ponto
-                    </Typography>
-                    <IconButton color="error" onClick={() => props.onLogout()}>
-                        <LogoutIcon />
-                    </IconButton>
-                </Toolbar>
-            </AppBar>
+    const [open, setOpen] = React.useState(false);
 
-            <div id="empty-list"
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    return (
+        <Container component="main" style={{ width: '100%', height: '100%', }}>
+            <NavBar onLogout={props.onLogout} />
+
+            <Search
+                user={props.user}
+                onSetUser={props.onSetUser}
+            />
+            <br />
+            <br />
+
+            {props.user?.clocks?.length === 0 ? <EmptyList></EmptyList> : <Clocks user={props.user} onSetUser={props.onSetUser}></Clocks>}
+
+            <Fab color="primary" aria-label="add" onClick={handleClickOpen}
                 style={{
-                    width: '100%',
-                    height: '85%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                }}
-            >
-                <img src="/assets/images/timesheet_calculator.svg" alt='empty-list' style={{ width: '50%', marginBottom: '1rem' }} />
-                <Typography component="h1" variant="h5">
-                    Nenhuma batida inserida!
-                </Typography>
-            </div>
-        </div>
+                    margin: 0,
+                    top: 'auto',
+                    right: 20,
+                    bottom: 20,
+                    left: 'auto',
+                    position: 'fixed',
+                }}>
+                <AddIcon />
+            </Fab>
+
+            <ClockDialog
+                open={open}
+                onSetOpen={setOpen}
+                onClickOpen={handleClickOpen}
+                onClickClose={handleClose}
+                user={props.user}
+                onSetUser={props.onSetUser}
+            ></ClockDialog>
+        </Container>
     )
 }
 
