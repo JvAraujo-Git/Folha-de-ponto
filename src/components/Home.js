@@ -10,6 +10,10 @@ import AddIcon from '@mui/icons-material/Add';
 import Container from '@mui/material/Container';
 
 const Home = (props) => {
+    if (!props.user) {
+        window.location.href = '/sign-in';
+    }
+
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -24,12 +28,17 @@ const Home = (props) => {
         <Container component="main" style={{ width: '100%', height: '100%', }}>
             <NavBar onLogout={props.onLogout} />
 
-            <Search
-                user={props.user}
-                onSetUser={props.onSetUser}
-            />
-            <br />
-            <br />
+            {props.user?.clocks?.length === 0 ?
+                '' :
+                <div>
+                    <Search
+                        user={props.user}
+                        onSetUser={props.onSetUser}
+                    />
+
+                    <br />
+                    <br />
+                </div>}
 
             {props.user?.clocks?.length === 0 ? <EmptyList></EmptyList> : <Clocks user={props.user} onSetUser={props.onSetUser}></Clocks>}
 

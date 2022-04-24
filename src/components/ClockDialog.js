@@ -94,6 +94,7 @@ export default function ClockDialog(props) {
                         onChange={(newValue) => setDate(newValue)}
                         renderInput={(params) =>
                             <TextField {...params}
+                                fullWidth
                                 margin="normal"
                                 id="date"
                                 name="date"
@@ -114,6 +115,7 @@ export default function ClockDialog(props) {
                                 onChange={(newValue) => setEnterOne(newValue)}
                                 renderInput={(params) =>
                                     <TextField {...params}
+                                        fullWidth
                                         margin="normal"
                                         id="enter-one"
                                         name="enterOne"
@@ -133,6 +135,7 @@ export default function ClockDialog(props) {
                                 onChange={(newValue) => setLeaveOne(newValue)}
                                 renderInput={(params) =>
                                     <TextField {...params}
+                                        fullWidth
                                         margin="normal"
                                         id="leave-one"
                                         name="leaveOne"
@@ -155,6 +158,7 @@ export default function ClockDialog(props) {
                                 onChange={(newValue) => setEnterTwo(newValue)}
                                 renderInput={(params) =>
                                     <TextField {...params}
+                                        fullWidth
                                         margin="normal"
                                         id="enter-two"
                                         name="enterTwo"
@@ -174,6 +178,7 @@ export default function ClockDialog(props) {
                                 onChange={(newValue) => setLeaveTwo(newValue)}
                                 renderInput={(params) =>
                                     <TextField {...params}
+                                        fullWidth
                                         margin="normal"
                                         id="leave-two"
                                         name="leaveTwo"
