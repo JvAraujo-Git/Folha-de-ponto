@@ -1,5 +1,5 @@
-# Projeto TimeSheet Calculator - Luiz Guilherme de Melo Rodrigues
-## Projeto TimeSheet Calculator (Calculadora de Folha de Ponto) cujo objetivo é permitir o usuário registrar (adicionar, editar, filtrar e excluir) suas batidas de ponto, bem como mostrar as horas trabalhadas para cada dia.
+# Projeto Folha de ponto - João Araujo
+## Projeto Folha de ponto (Calculadora de Folha de Ponto) cujo objetivo é permitir o usuário registrar (adicionar, editar, filtrar e excluir) suas batidas de ponto, bem como mostrar as horas trabalhadas para cada dia.
 
 # Telas
 

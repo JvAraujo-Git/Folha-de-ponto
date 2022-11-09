@@ -1,5 +1,5 @@
 {
-  "name": "timesheet-calculator",
+  "name": "folha-de-ponto",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

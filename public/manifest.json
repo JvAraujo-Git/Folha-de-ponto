@@ -1,6 +1,5 @@
 {
-  "name": "TimeSheet Calculator - Calculadora de Folha de Ponto",
-  "short_name": "TimeSheet Calculator",
+  "name": "Folha de Ponto",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#3b78ac",
